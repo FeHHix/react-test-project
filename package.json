@@ -4,7 +4,7 @@
   "description": "React RU tutorial",
   "main": "index.html",
   "scripts": {
-    "start": "node server.js" //запуск сервера командой npm start
+    "start": "node server.js"
   },
   "author": "Artem Isaenok",
   "license": "MIT",
