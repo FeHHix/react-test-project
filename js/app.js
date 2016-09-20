@@ -44,7 +44,7 @@ var Article = React.createClass({
 				visible = this.state.visible;
 
 		return (
-			<div className="article">
+			<div className="well">
 				<p className="news__author">{author}:</p>
 				<p className="news__text">{text}</p>
 				<a href="#"
@@ -136,29 +136,35 @@ var Add = React.createClass({
 				textIsEmpty = this.state.textIsEmpty;
 
 		return (
-			<form className='add cf'>
-				<input
-					type='text'
-					className='add__author'
-					defaultValue=''
-					onChange={this.onFieldChange.bind(this, 'authorIsEmpty')}
-					placeholder='Ваше имя'
-					ref='author'
-				/>
-				<textarea
-					className='add__text'
-					defaultValue=''
-					onChange={this.onFieldChange.bind(this, 'textIsEmpty')}
-					placeholder='Текст новости'
-					ref='text'
-				></textarea>
-				<label className='add__checkrule'>
-					<input type='checkbox' ref='checkrule' onChange={this.onCheckRuleClick} />
-					Я согласен с правилами
-				</label>
+			<form className="add">
+				<div className="form-group">
+					<input
+						type='text'
+						className='form-control'
+						defaultValue=''
+						onChange={this.onFieldChange.bind(this, 'authorIsEmpty')}
+						placeholder='Ваше имя'
+						ref='author'
+					/>
+				</div>
+				<div className="form-group">
+					<textarea
+						className='form-control'
+						defaultValue=''
+						onChange={this.onFieldChange.bind(this, 'textIsEmpty')}
+						placeholder='Текст новости'
+						ref='text'
+					></textarea>
+				</div>
+				<div className="checkbox">
+					<label>
+						<input type='checkbox' ref='checkrule' onChange={this.onCheckRuleClick} />
+						Я согласен с правилами
+					</label>
+				</div>,
 				<button
 					type='button'
-					className='add__btn'
+					className='btn btn-primary'
 					onClick={this.onBtnClickHandler}
 					ref='alert_button'
 					disabled={agreeNotChecked || authorIsEmpty || textIsEmpty}>
@@ -168,16 +174,6 @@ var Add = React.createClass({
 		);
 	}
 });
-
-/*var Comments = React.createClass({
-	render: function() {
-		return (
-			<div className="comments">
-				Нет новостей - комментировать нечего.
-			</div>
-		);
-	}
-});*/
 
 var App = React.createClass({
 	getInitialState: function() {
@@ -200,6 +196,7 @@ var App = React.createClass({
 		return (
 			<div className="app">
 				<Add />
+				<div className="ln_solid"></div>
 				<h3>Новости</h3>
 				<News data={this.state.news}/>
 				{/*<Comments />*/}
