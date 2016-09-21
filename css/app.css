@@ -27,8 +27,10 @@ p {
 .test-input {
 margin: 0 5px 5px 0;
 }
-.add, .news {
+.add {
   margin: 0 5px 5px 0;
+  width: 210px;
+  border: 1px dashed rgba(0, 89, 181, 0.82);
   padding: 5px;
 }
 .add__author, .add__text, .add__btn, .add__checkrule {
@@ -51,11 +53,4 @@ margin: 0 5px 5px 0;
 .add__btn:disabled {
   background: #CCC;
   color: #999;
-}
-.ln_solid {
-    border-top: 1px solid #e5e5e5;
-    color: #ffffff;
-    background-color: #ffffff;
-    height: 1px;
-    margin: 20px 0;
 }
